@@ -1,19 +1,16 @@
 # Chat With PDF - Generative AI Application
 ## Built Using Amazon Bedrock, Langchain, Python, Docker, Amazon S3
 ## Models used:
-    Amazon Titan Embedding G1 - Text
+    Cohere.embed-English-v3 - Text
     Anthropic Claude 2.1
 
 ## Introduction
-In this video we will build a CHATBOT like application with AWS Amazon Bedrock, docker, python, Langchain, and Streamlit. We will use Retrieval-Augmented generation concept to provide context to the Large Language model along with user query to generate response from our Knowledgebase.
+In this project, I built a CHATBOT like application with AWS Amazon Bedrock, docker, python, Langchain, and Streamlit. I used the Retrieval-Augmented generation concept to provide context to the Large Language model along with user query to generate response from the Knowledgebase.
 
-In this hands-on tutorial, we will demonstrate the following:
+In this project, I will demonstrate the following:
 - Architecture of the applications
 - Build 2 applications (ADMIN and USER) and create DOCKER images
 
-
-## Architecture
-![image info](./Bedrock-ChatWithPdf.png)
 
 ## ADMIN Application:
     - Build Admin Web application where AdminUser can upload the pdf.
@@ -47,7 +44,7 @@ In this hands-on tutorial, we will demonstrate the following:
   `docker build -t pdf-reader-client .`
 
   Run ADMIN application:
-  `docker run -e BUCKET_NAME=<YOUR S3 BUCKET NAME> -v ~/.aws:/root/.aws -p 8084:8084 -it pdf-reader-client`
+  `docker run -e BUCKET_NAME=<YOUR S3 BUCKET NAME> -v ~/.aws:/root/.aws -p 8080:8080 -it pdf-reader-client`
 
 
 #### Note: The docker volume mount is only needed in local. If you are running the container in ECS, or EKS, the iam role is used.
